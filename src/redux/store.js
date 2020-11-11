@@ -7,9 +7,12 @@ const initialState = {};
 
 if(localStorage.getItem('user')){
   //console.log('RUN',localStorage.getItem('cartItems') )
-  initialState.cart = {items: JSON.parse(localStorage.getItem('cartItems'))}
   initialState.session = {user: JSON.parse(localStorage.getItem('user'))}
+  // initialState.cart = {items: JSON.parse(localStorage.getItem('cartItems'))}
   initialState.session.loggedInStatus = true
+}
+if(localStorage.getItem('cartItems')){
+  initialState.cart = {items: JSON.parse(localStorage.getItem('cartItems'))}
 }
 
 export default createStore(rootReducer, initialState, composeEnhancer(applyMiddleware(thunk)));

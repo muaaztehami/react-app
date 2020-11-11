@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { LOGIN_USER } from "./types"
-import { LOGOUT_USER } from "./types"
+import { LOGIN_USER } from "../types/sessionTypes"
+import { LOGOUT_USER } from "../types/sessionTypes"
 
 
 

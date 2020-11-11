@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Loading from './Loading';
 import Login from './Login';
 import App from '../App';
-import { loginUser } from '../redux/auth/sessionAction';
+import { loginUser } from '../redux/actions/sessionAction';
 import LoginRequiredRoute from './LoginRequiredRoute';
 
 

@@ -1,4 +1,4 @@
-import {FETCH_PRODUCTS, FILTER_PRODUCTS_BY_SIZE, FILTER_PRODUCTS_BY_PRICE} from "../Product/types";
+import {FETCH_PRODUCTS, FILTER_PRODUCTS_BY_SIZE, FILTER_PRODUCTS_BY_PRICE} from "../types/productTypes";
 
 const initialState = { items: [], filteredItems:[], size:'' };
 const productReducer = (state=initialState, action) => {

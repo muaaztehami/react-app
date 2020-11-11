@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import React, { Component } from 'react';
-import { loginUser } from '../redux/auth/sessionAction';
+import { loginUser } from '../redux/actions/sessionAction';
 
 
 //const Login = (props) => {

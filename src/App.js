@@ -7,7 +7,7 @@ import {Provider} from 'react-redux';
 import store from './redux/store';
 import { connect } from 'react-redux';
 import {  Redirect } from 'react-router-dom';
-import { logoutUser } from './redux/auth/sessionAction';
+import { logoutUser } from './redux/actions/sessionAction';
 
 
 class App extends Component {

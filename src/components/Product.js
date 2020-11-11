@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import util from '../util';
 import {connect} from 'react-redux'
-import {fetchProducts} from '../redux/Product/productActions'
-import {addToCart} from '../redux/Product/cartActions'
+import {fetchProducts} from '../redux/actions/productActions'
+import {addToCart} from '../redux/actions/cartActions'
 
 class Products extends Component {
   componentDidMount(){

@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "./types";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../types/productTypes";
 
 const initialState = {items: []}
 const cartReducer = (state = initialState, action) => {

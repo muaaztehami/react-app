@@ -1,6 +1,6 @@
 //import { combineReducers } from 'redux';
 
-import { LOGIN_USER, LOGOUT_USER } from './types';
+import { LOGIN_USER, LOGOUT_USER } from '../types/sessionTypes';
 
 const initialState = { user: {email:'', token:''}, loggedInStatus: '' };
 const sessionReducer = ( state=initialState, action) => {

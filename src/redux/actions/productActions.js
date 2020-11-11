@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS, FILTER_PRODUCTS_BY_SIZE, FILTER_PRODUCTS_BY_PRICE } from "./types"
+import { FETCH_PRODUCTS, FILTER_PRODUCTS_BY_SIZE, FILTER_PRODUCTS_BY_PRICE } from "../types/productTypes"
 import axios from 'axios';
 
 export const fetchProducts = (email, token) => (dispatch) => {
