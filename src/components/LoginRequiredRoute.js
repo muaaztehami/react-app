@@ -58,7 +58,7 @@ const LoginRequiredRoute = ({ component: Component, ...rest }) => (
 //   })
 // )(LoginRequiredRoute);
 const mapStateToProps = state => {
-  console.log('state: ', state.session.loggedInStatus)
+  // console.log('state: ', state.session.loggedInStatus)
   return {
     loggedIn: state.session.loggedInStatus
     }

@@ -1,20 +1,21 @@
 import { FETCH_PRODUCTS, FILTER_PRODUCTS_BY_SIZE, FILTER_PRODUCTS_BY_PRICE } from "../types/productTypes"
 import axios from 'axios';
 
-export const fetchProducts = (email, token) => (dispatch) => {
-
+export const fetchProducts = (email, token, keyword) => (dispatch) => {
+// console.log('RUNNNN.......',keyword)
   const headers = {
     'X-User-Email': email,
     'X-User-Token': token
   }
   axios.get("http://localhost:3001/api/v1/products",  {
-    headers: headers
+    headers: headers,
+    params: { keyword: keyword }
   })
   .then(response => {
     if (response.status === 200)
     {
       // localStorage.setItem("user", JSON.stringify(response.data))
-      // console.log("response: ", response.data)
+      console.log("response: ", response.data)
       return dispatch({type: FETCH_PRODUCTS,payload: response.data })
     }
   })

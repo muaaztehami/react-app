@@ -9,7 +9,6 @@ class Products extends Component {
     this.props.fetchProducts(this.props.email, this.props.token);
   }
   render() {
-    console.log('size...', this.props.products)
     const productItems = this.props.products.map((product) => (
       <div className="col-md-4" key={product.id}>
         <div className="thumbnail text-center">
@@ -38,7 +37,6 @@ class Products extends Component {
   }
 }
 const mapStateToProps = state => {
-  //console.log('size...', state.products.filteredItems)
   return {
     products: state.products.filteredItems,
     cartItems: state.cart.items,
