@@ -6,7 +6,7 @@ import Basket from './components/Basket';
 import {Provider} from 'react-redux';
 import store from './redux/store';
 import { connect } from 'react-redux';
-import {  Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { logoutUser } from './redux/actions/sessionAction';
 
 
@@ -20,7 +20,9 @@ class App extends Component {
     return (
       
       <Provider store={store}>
-        <button onClick={() => { this.props.logoutUser(this.props.email, this.props.token) }}>Logout</button>
+         <Link to='/' onClick={() => { this.props.logoutUser(this.props.email, this.props.token) }}>Logout</Link>
+
+        {/* <button onClick={() => { this.props.logoutUser(this.props.email, this.props.token) }}>Logout</button> */}
 
         <div className="container">
           <h1>Ecommerce Shopping Cart</h1>

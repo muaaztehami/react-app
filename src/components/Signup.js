@@ -1,18 +1,15 @@
-//import React from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom';
-import React, { Component } from 'react';
-import { loginUser } from '../redux/actions/sessionAction';
+import { signupUser } from '../redux/actions/sessionAction';
+import { connect } from 'react-redux';
 
-
-//const Login = (props) => {
-class Login extends Component {
+class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      password: ''
-      //loggedInStatus: false
+      password: '',
+      password_confirmation: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,28 +21,22 @@ class Login extends Component {
   }
   handleSubmit(event){
     event.preventDefault();
-    //console.log('submit: ', this.state.password)
-    this.props.loginUser(this.state.email, this.state.password)
-    // .then(
-    //   () => {
-    //     this.props.history.push("/dashboard");
-    //   }
-    // )
+    this.props.signupUser(this.state.email, this.state.password)
   }
+  
   render() {
-    console.log('login: ',this.props.loggedInStatus)
     if (this.props.loggedInStatus) {
       //const { from } = props.location.state || { from: { pathname: '/' } }
       return <Redirect to='/products' />
     }
     return (
       <div>
-        <Link to='/signup' >Signup</Link>
+        <Link to='/login' >Login</Link>
+      
         <div className='row'>
           <div className='col-md-4 col-md-offset-4'>
-            <h1>Login Page</h1>
-            
             <form onSubmit={this.handleSubmit}>
+              <h1>Sign Up</h1>
               <div className='form-group'>
                 <label clssName='control-label'>Email</label>
                 <input 
@@ -58,7 +49,6 @@ class Login extends Component {
                 className='form-control'
                 />
               </div>
-
               <div className='form-group'>
                 <label clssName='control-label'>Password</label>
                 <input 
@@ -72,26 +62,36 @@ class Login extends Component {
                 />
               </div>
               <div className='form-group'>
-              <button className='btn btn-primary btn-lg' type="submit">
-                Login
-              </button>
-            </div>
+                <label clssName='control-label'>Password Confirmation</label>
+                <input 
+                type='password'
+                name='password_confirmation'
+                placeholder="Password" 
+                value={this.state.password_confirmation} 
+                onChange={this.handleChange} 
+                required
+                className='form-control'
+                />
+              </div>
+              <div className='form-group'>
+                <button className='btn btn-primary btn-lg' type="submit">
+                  Sign up
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
-        
-    
+      
     )
   }
 }
-//button onClick={() => { props.loginUser('supervisore@gmail.com', '123456') }}>Login</button>
 
 export default connect(
   state => ({
     loggedInStatus: state.session.loggedInStatus
   }),
   {
-    loginUser,
+    signupUser,
   }
-)(Login);
+)(Signup);
